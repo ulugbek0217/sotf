@@ -9,8 +9,8 @@ if [[ $git_status == "changed" ]]; then
     git push origin main
 
     if [[ $? != 0 ]]; then
-        echo -e "\e[31mCouldn't push saves\e[0m"
+        echo -e "\e[31mCouldn't push saves ;; $(date "+%d/%m/%Y %H:%M")\e[0m"
     else
-        echo -e "\e[32mPushed to github!\e[0m"
+        echo -e "\e[32mPushed to github! ;; $(date "+%d/%m/%Y %H:%M")\e[0m"
     fi
 fi

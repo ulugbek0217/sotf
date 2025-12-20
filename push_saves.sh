@@ -1,18 +1,7 @@
 #!/bin/bash
 
-
 cd /root/sotf_server/game/userdata
 git_status=$(git status | awk '/Changes not/ {printf "changed"}')
-
-#container = $(docker ps -a --format "{{.Names}}" | grep -i "sons")
-#if [ -n $ ]; then
-#    echo "running"
-#    docker stop container
-#else
-#    echo "stopped, pushing..."
-#    cd /root/sotf_server/game/userdata/
-#
-#fi
 
 if [[ $git_status == "changed" ]]; then
     git add .
@@ -25,5 +14,4 @@ if [[ $? != 0 ]]; then
 else
     echo -e "\e[32mPushed to github!\e[0m"
 fi
-#container=$(docker ps -a --format "{{.Names}}" | grep -i "sons")
-#echo "$container"
+
